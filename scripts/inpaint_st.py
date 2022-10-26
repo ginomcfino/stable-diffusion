@@ -17,15 +17,15 @@ MAX_SIZE = 640
 # load safety model
 from diffusers.pipelines.stable_diffusion.safety_checker import StableDiffusionSafetyChecker
 from transformers import AutoFeatureExtractor
-from imwatermark import WatermarkEncoder
+# from imwatermark import WatermarkEncoder
 import cv2
 
 safety_model_id = "CompVis/stable-diffusion-safety-checker"
 safety_feature_extractor = AutoFeatureExtractor.from_pretrained(safety_model_id)
 safety_checker = StableDiffusionSafetyChecker.from_pretrained(safety_model_id)
-wm = "StableDiffusionV1-Inpainting"
-wm_encoder = WatermarkEncoder()
-wm_encoder.set_watermark('bytes', wm.encode('utf-8'))
+# wm = "StableDiffusionV1-Inpainting"
+# wm_encoder = WatermarkEncoder()
+# wm_encoder.set_watermark('bytes', wm.encode('utf-8'))
 
 def numpy_to_pil(images):
     """
