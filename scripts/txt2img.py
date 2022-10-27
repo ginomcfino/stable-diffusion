@@ -14,6 +14,20 @@ from pytorch_lightning import seed_everything
 from torch import autocast
 from contextlib import contextmanager, nullcontext
 
+import os 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+cwd = os.getcwd()
+
+print()
+print(dir_path)
+print(cwd)
+print()
+
+import sys
+# sys.path.append('/Users/ginomcfino/github/stable-diffusion')
+sys.path.append(cwd)
+
+
 from ldm.util import instantiate_from_config
 from ldm.models.diffusion.ddim import DDIMSampler
 from ldm.models.diffusion.plms import PLMSSampler
